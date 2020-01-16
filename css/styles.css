@@ -1,0 +1,191 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background: #fefefe;
+}
+
+.Header {
+  margin-top: 70px;
+  height: 100px;
+}
+
+a {
+  color: #171717;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.2s;
+  border-bottom: 1px dashed transparent;
+}
+
+a:hover {
+  color: white;
+  border-bottom: 1px dashed white;
+}
+
+.button.button-primary {
+  background: #4056F4;
+  border-color: #4056F4;
+}
+
+.Jumbotron {
+  background: #4056F4;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 40px;
+  padding-bottom: 170px;
+}
+
+.Jumbotron h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.Jumbotron p {
+  margin: 0;
+  margin-bottom: 12px;
+  width: 50%;
+  text-align: center;
+  color: white;
+}
+
+.SkillsBox {
+  background: white;
+  box-shadow: 0 1px 3px 0 rgba(89, 98, 115, .22);
+  margin-top: -150px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.SkillColumn {
+  text-align: center;
+  flex: 1;
+  padding-right: 20px;
+  padding-bottom: 40px;
+}
+
+.SkillColumn:last-child {
+  padding-left: 20px;
+  border-left: 1px solid #f0f0f0;
+}
+
+.SkillColumn h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: #4056F4;
+  margin-top: 20px;
+}
+
+.SkillColumn img {
+  color: #4056F4;
+  text-align: center;
+  width: 50px;
+  margin-top: 30px;
+}
+
+.SkillList {
+  list-style-type: none;
+}
+
+.SkillList__item {
+  border-bottom: 1px solid #f0f0f0;
+  display: block;
+  line-height: 42px;
+  font-size: 14px;
+}
+
+.SkillList__title {
+  margin: 0;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.Projects {
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+
+.Projects h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 32px;
+}
+
+.TimelineItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+  margin-bottom: 32px;
+}
+
+.TimelineItem__title {
+  margin-bottom: 0px;
+}
+
+.TimelineItem__time {
+  display: block;
+  margin-bottom: 12px;
+  color: #3f3f3f;
+}
+
+.ItemTechList {
+  display: flex;
+}
+
+.ItemTechList__title {
+  display: block;
+  margin-top: 12px;
+}
+
+.ItemTechList__item {
+  background: #4056F4;
+  color: white;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 2px;
+  line-height: 16px;
+  margin-right: 4px;
+}
+
+.Contact {
+  background: #4056F4;
+  padding: 30px 0 40px 0;
+  color: white;
+}
+
+.Contact h3 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 32px;
+}
+
+.Contact .button {
+  color: white;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.Contact .button:hover,
+.Contact .button:focus {
+  background: white;
+  border-color: white;
+}
+
+.ThankYouMessage {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 24px;
+  display: none;
+}
