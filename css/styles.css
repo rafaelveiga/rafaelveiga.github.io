@@ -9,6 +9,10 @@ body {
   height: 100px;
 }
 
+.Header .button {
+  float: right;
+}
+
 a {
   color: #171717;
   font-weight: bold;
@@ -188,4 +192,77 @@ a:hover {
   font-size: 16px;
   margin-bottom: 24px;
   display: none;
+}
+
+@media (max-width: 992px) {
+  .ItemTechList__item {
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }  
+}
+
+@media (max-width: 768px) {
+  .Jumbotron {
+    padding-top: 120px;
+  }
+
+  .SkillsBox {
+    margin-top: -50px;
+  }
+  
+  .TimelineItem {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .Header {
+    text-align: center;
+  }
+
+  .Header .button {
+    float: none;
+  }
+
+  .SkillsBox {
+    flex-direction: column;
+    align-items: center;
+    justify-content:  center;
+  }
+
+  .TimelineItem {
+    display: block;
+  }
+
+  .TimelineItem img {
+    margin-top: 16px;
+  }
+  
+  .ItemTechList {
+    flex-wrap: wrap;
+  }
+
+  .ItemTechList__item {
+    margin-top: 8px;
+  }
+
+  .SkillColumn {
+    padding: 0px;
+  }
+
+  .SkillColumn:last-child {
+    padding: 0;
+    border-left: 0px;
+  }
+
+  .Jumbotron {
+    height: auto;
+    padding: 50px 0;
+  }
+
+  .Jumbotron h2 {
+    font-size: 20px;
+  }
 }
