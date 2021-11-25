@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GERDAU LP</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="Start">
+      <div class="Slider"></div>
+      <div class="StartTextContainer">
+        <div class="StartText">
+          <h1 data-i18n="[html]startsection-title">
+            O Voluntariado <br />
+            molda o futuro.
+          </h1>
+          <h2 data-i18n="startsection-subtitle">Vem você também!</h2>
+        </div>
+        <div class="StartCTA" id="StartCTA">
+          <h3 data-i18n="startsection-cta">Nossas conquistas em 2021</h3>
+          <span class="material-icons"> arrow_downward </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="Numbers" id="NumbersSection">
+      <div class="Numbers__container Container" id="NumbersContainer">
+        <div class="Numbers__title">
+          <h1 data-i18n="[html]numbers-title">
+            Nossas Conquistas <br />
+            <strong>em 2021</strong>
+          </h1>
+        </div>
+
+        <div class="Numbers__data" id="Numbers">
+          <div class="NumbersDataPoint">
+            <span data-i18n="numbers-prefix">+ de</span>
+            <h2>180</h2>
+            <span data-i18n="numbers-actions">Ações</span>
+          </div>
+          <div class="NumbersDataPoint">
+            <span>+ de</span>
+            <h2>750</h2>
+            <span data-i18n="numbers-volunteers">Voluntários</span>
+          </div>
+          <div class="NumbersDataPoint">
+            <span>+ de</span>
+            <h2>1130</h2>
+            <span data-i18n="numbers-hours">Horas doadas</span>
+          </div>
+        </div>
+
+        <div class="Numbers__source" data-i18n="numbers-source">
+          Fonte: Plataforma V2V - data 09/11/21
+        </div>
+      </div>
+    </section>
+
+    <section class="Ebook">
+      <div class="Ebook__container Container">
+        <div class="Ebook__title">
+          <h1 data-i18n="[html]ebook-title">
+            <strong>
+              Baixe o ebook <br />
+              e confira
+            </strong>
+            <br />
+            nosso impacto.
+          </h1>
+        </div>
+        <div class="Ebook__info">
+          <p data-i18n="ebook-quote1">
+            "Vejo minhas ações de voluntariado como uma retribuição à sociedade,
+            por tudo que muitos me ajudaram a conquistar." - Carlos Andre Rios
+            Esteves, colaborador Next Business Development.
+          </p>
+
+          <p data-i18n="ebook-quote2">
+            "Atuar com responsabilidade social a partir do entendimento do nosso
+            papel na sociedade é uma premissa na qual a Gerdau investe." - Carol
+            Carpenedo, Diretora Global de Pessoas e Responsabilidade Social.
+          </p>
+
+          <p>
+            <strong data-i18n="[html]ebook-cta-text">
+              Confira a versão completa das <br />
+              nossas ações de impacto em 2021.
+            </strong>
+          </p>
+
+          <a
+            href="assets/ebook/pt-BR.pdf"
+            class="Button Button--secondary"
+            data-i18n="ebook-cta-button"
+            target="_blank"
+            id="EbookDownload"
+            >Baixe Aqui</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="Filter">
+      <div class="Filter__container Container">
+        <div class="FilterInfo">
+          <h1 data-i18n="[html]filter-title">
+            Vem moldar <br />o futuro com <br />a gente!
+          </h1>
+          <p data-i18n="filter-text">
+            Ainda não faz parte do nosso Programa de Voluntariado? Uma nova
+            página do futuro começa em 2022 e queremos você ao nosso lado. Uma
+            pequena ação pode contribuir para um amanhã muito melhor. Vem!
+          </p>
+
+          <p data-i18n="filter-cta-text">
+            Já faz a diferença com o Programa de Voluntariado? Atualize a sua
+            foto de perfil com nosso filtro especial!
+          </p>
+
+          <button
+            role="OpenFilter"
+            class="Button Button--main"
+            data-i18n="filter-cta-button"
+          >
+            Comece Agora
+          </button>
+        </div>
+
+        <div class="FilterPhone" id="Phone"></div>
+      </div>
+    </section>
+
+    <section class="CTA">
+      <div class="CTA__container Container">
+        <div class="CTA__info">
+          <h1 data-i18n="cta-title">A transformação começa aqui</h1>
+
+          <p data-i18n="cta-text">
+            Acesse a Plataforma de Voluntariado e encontre a ação mais próxima
+            de você. A transformação começa com ação.
+          </p>
+
+          <a
+            href="https://programavoluntariadogerdau.v2v.net/"
+            target="_blank"
+            class="Button Button--secondary"
+            data-i18n="cta-button"
+            >Acesse Aqui</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <div class="ModalContainer">
+      <div class="FilterModal">
+        <button
+          href="#"
+          class="FilterModal__close Button Button--main"
+          role="CloseModal"
+        >
+          Fechar
+        </button>
+        <div class="FilterModal__message" data-i18n="filter-ask-permission">
+          Permita o uso da câmera clicando em "Permitir"
+        </div>
+        <div class="FilterModal__container" id="FilterGroup">
+          <video autoplay="true" id="webCamera"></video>
+
+          <img src="assets/images/filter-en.png" alt="" class="FilterOverlay" />
+        </div>
+        <img
+          class="FilterResult__container --hidden"
+          src="#"
+          id="FilterResult"
+          alt=""
+        />
+
+        <div class="ButtonGroup" role="PrePhotoButtonGroup">
+          <button
+            role="TakePicture"
+            class="Button Button--main-dark"
+            data-i18n="filter-take-picture"
+          >
+            Tirar Foto
+          </button>
+        </div>
+
+        <div class="ButtonGroup --hidden" role="PostPhotoButtonGroup">
+          <a
+            download="imagem.jpeg"
+            href="#"
+            role="DownloadPicture"
+            class="Button Button--main-dark"
+            data-i18n="filter-download-picture"
+            >Baixar Foto</a
+          >
+          <button
+            role="ResetPicture"
+            class="Button Button--secondary"
+            data-i18n="filter-retake-picture"
+          >
+            Tirar Outra Foto
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="Footer">
+      <img src="assets/images/logo1.png" width="100" alt="" />
+      <img src="assets/images/logo2.png" alt="" />
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="assets/js/lib/jquery.i18n/jquery.i18n.js"></script>
+    <script src="assets/js/lib/jquery.i18n/jquery.i18n.messagestore.js"></script>
+    <script src="assets/js/lib/jquery.i18n/jquery.i18n.fallbacks.js"></script>
+    <script src="assets/js/lib/jquery.i18n/jquery.i18n.language.js"></script>
+    <script src="assets/js/lib/jquery.i18n/jquery.i18n.parser.js"></script>
+    <script src="assets/js/lib/jquery.i18n/jquery.i18n.emitter.js"></script>
+    <script src="assets/js/lib/jquery.i18n/jquery.i18n.emitter.bidi.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <script src="assets/js/bg-slideshow.js"></script>
+    <script src="assets/js/numbers.js"></script>
+    <script src="assets/js/phone.js"></script>
+    <script src="assets/js/language.js"></script>
+    <script src="assets/js/webcam-filter.js"></script>
+  </body>
+</html>

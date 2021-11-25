@@ -1,0 +1,665 @@
+body {
+  font-family: "Barlow", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --light: #fff1f1;
+  --main-light: #71c9ff;
+  --main: #43b1ff;
+  --main-dark: #2b3fa5;
+  --secondary: #f7a10f;
+  --text: #100e0f;
+}
+
+/*
+ * Shared
+ */
+.Container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.Button {
+  color: white;
+  font-size: 26px;
+  line-height: 21px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 40px;
+  padding: 24px;
+  display: block;
+  max-width: 384px;
+  border: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.Button--secondary {
+  background: var(--secondary);
+}
+
+.Button--main {
+  background: var(--main);
+}
+
+.Button--main-dark {
+  background: var(--main-dark);
+}
+
+.ButtonGroup {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.--hidden {
+  display: none;
+}
+
+/*
+ * Start Section
+ */
+.Start {
+  background-color: var(--main);
+  min-height: 100vh;
+}
+
+.Slider {
+  min-height: 100vh;
+  margin-bottom: -100vh;
+}
+
+.Slider__slide {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.StartTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.StartText {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.StartText h1 {
+  font-size: 115px;
+  line-height: 1;
+  color: white;
+  margin: 0;
+  margin-bottom: 54px;
+}
+
+.StartText h2 {
+  font-size: 60px;
+  color: white;
+  font-weight: normal;
+  margin: 0;
+}
+
+.StartCTA {
+  text-align: center;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.StartCTA span {
+  color: white;
+  font-size: 23px;
+  animation: upAndDown 2s ease-in-out infinite;
+}
+
+.StartCTA h3 {
+  font-size: 30px;
+  color: white;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 50px;
+  margin-top: -50px;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+}
+
+@keyframes upAndDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/*
+ * Numbers
+ */
+.Numbers {
+  background-color: var(--main-dark);
+  /* padding: 8em 0; */
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.Numbers__container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.Numbers__title {
+  color: white;
+  text-align: center;
+}
+
+.Numbers__title h1 {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 83px;
+  line-height: 1.05;
+}
+
+.Numbers__title h1:after {
+  content: "";
+  display: block;
+  height: 26px;
+  max-width: 356px;
+  background-color: var(--main-light);
+  margin: 0 auto;
+  margin-top: -24px;
+}
+
+.Numbers__data {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0 180px;
+  /* margin-top: 140px; */
+}
+
+.NumbersDataPoint {
+  text-align: center;
+  color: white;
+}
+
+.NumbersDataPoint h2 {
+  font-size: 100px; /*84px;*/
+  color: var(--main-light);
+  margin: 0px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.NumbersDataPoint span {
+  font-size: 22px;
+  font-weight: 200;
+}
+
+.Numbers__source {
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  font-weight: 200;
+}
+
+/*
+ * Ebook section
+ */
+.Ebook {
+  background: linear-gradient(to right, var(--secondary) 50%, var(--light) 50%);
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 50px 0;
+  box-sizing: border-box;
+}
+
+.Ebook__container {
+  display: flex;
+}
+
+.Ebook__title {
+  display: flex;
+  align-items: center;
+  flex-basis: 50%;
+}
+
+.Ebook__title h1 {
+  color: white;
+  font-size: 84px;
+  margin: 0;
+  font-weight: 200;
+}
+
+.Ebook__info {
+  flex-basis: 50%;
+  padding: 0 0 0 150px;
+  box-sizing: border-box;
+}
+
+.Ebook__info p {
+  color: var(--text);
+  font-size: 20px;
+  line-height: 32px;
+  margin-bottom: 45px;
+}
+
+/*
+ * Filter
+ */
+.Filter {
+  background: linear-gradient(to right, var(--light) 75%, var(--main) 25%);
+  /* padding: 130px 0; */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.Filter__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.FilterInfo {
+  flex-basis: 40%;
+}
+
+.FilterInfo h1 {
+  font-size: 85px;
+  line-height: 89px;
+  color: black;
+  margin: 0;
+  margin-bottom: 55px;
+}
+
+.FilterInfo p {
+  color: var(--text);
+  font-size: 20px;
+  line-height: 32px;
+  margin-bottom: 45px;
+}
+
+.FilterPhone {
+  min-height: 100vh;
+  background-size: contain;
+  opacity: 0;
+  overflow: hidden;
+  align-self: stretch;
+  /* border: 1px solid red; */
+
+  background-repeat: no-repeat;
+  flex: 1;
+  position: relative;
+
+  background-image: url("../images/phone-pt-BR.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+/**
+ * CTA
+ */
+.CTA {
+  background-color: var(--main-dark);
+  padding: 8em 0;
+  background-image: url("../images/cta-bg.png");
+  background-repeat: no-repeat;
+  background-position: 135% center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.CTA__info {
+  max-width: 70%;
+}
+
+.CTA__info h1 {
+  color: white;
+  font-size: 100px;
+  margin: 0;
+  margin-bottom: 42px;
+}
+
+.CTA__info p {
+  color: white;
+  font-size: 28px;
+  letter-spacing: 1px;
+  line-height: 38px;
+  margin-bottom: 45px;
+}
+
+/*
+ * Filter Modal
+ */
+.ModalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.FilterModal {
+  background: white;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  padding: 25px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.FilterModal__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 12px;
+  top: -55px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.FilterModal__container {
+  width: 600px;
+  height: 600px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  display: none;
+}
+
+.FilterResult__container {
+  display: none;
+}
+
+.FilterModal video {
+  height: 85%;
+}
+
+.FilterModal .FilterOverlay {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.FilterModal__message {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 32px;
+  height: 600px;
+  width: 600px;
+  background: var(--main-dark);
+  color: white;
+}
+
+/*
+ * Footer
+ */
+.Footer {
+  padding: 62px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Footer img:first-child {
+  margin-right: 68px;
+}
+
+/*
+ * Responsive
+ */
+@media screen and (max-height: 800px) {
+  .StartText h1 {
+    font-size: 70px;
+  }
+
+  .StartText h2 {
+    font-size: 30px;
+  }
+
+  .FilterInfo {
+    padding: 50px 0;
+  }
+
+  .FilterInfo h1 {
+    font-size: 70px;
+    line-height: 70px;
+  }
+
+  .FilterModal {
+    transform: scale(0.75);
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .Ebook,
+  .CTA {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .Filter {
+    padding: 0 25px;
+  }
+
+  .CTA {
+    background-size: 40%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .Numbers__data {
+    padding: 0 100px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .Numbers__data {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .NumbersDataPoint {
+    margin-top: 32px;
+  }
+
+  .NumbersDataPoint:last-of-type {
+    grid-column-end: span 2;
+    /* border: 1px solid red; */
+    margin-bottom: 32px;
+    margin-top: 0px;
+  }
+
+  .CTA h1 {
+    font-size: 60px;
+  }
+
+  .Numbers,
+  .Ebook,
+  .Filter,
+  .CTA {
+    height: auto;
+    padding-top: 4em;
+    padding-bottom: 4em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .StartText h1 {
+    font-size: 80px;
+    margin-bottom: 30px;
+  }
+
+  .StartText h2 {
+    font-size: 40px;
+  }
+
+  .StartCTA h3 {
+    font-size: 20px;
+    padding: 0 24px;
+  }
+
+  .Numbers {
+    padding: 50px 24px;
+  }
+
+  .Numbers__title h1 {
+    font-size: 60px;
+  }
+
+  .Ebook {
+    padding: 50px 0;
+    background: linear-gradient(
+      to bottom,
+      var(--secondary) 35%,
+      var(--light) 35%
+    );
+  }
+
+  .Ebook__container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .Ebook__title h1 {
+    font-size: 60px;
+    margin-bottom: 60px;
+  }
+
+  .Ebook__info {
+    padding: 0 25px;
+  }
+
+  .Ebook__info .Button {
+    margin: auto;
+  }
+
+  .FilterInfo {
+    flex-basis: 65%;
+    padding: 50px 25px;
+  }
+
+  .FilterPhone {
+    display: none;
+  }
+
+  .CTA {
+    padding: 50px 35px;
+    background-image: none;
+    text-align: center;
+  }
+
+  .CTA__info {
+    max-width: 100%;
+  }
+
+  .CTA .Button {
+    margin: auto;
+  }
+
+  .CTA__info h1 {
+    font-size: 60px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .StartText h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    padding: 0 25px;
+  }
+
+  .StartText h2 {
+    font-size: 20px;
+  }
+
+  .Numbers__title h1 {
+    font-size: 50px;
+  }
+
+  .Numbers__title h1:after {
+    margin-top: -12px;
+  }
+
+  .Numbers__data {
+    /* margin-top: 40px; */
+    padding: 0px;
+    display: block;
+  }
+
+  .NumbersDataPoint {
+    margin: 48px 0;
+  }
+
+  .NumbersDataPoint:last-of-type {
+    grid-column-end: 1;
+  }
+
+  .Ebook {
+    padding: 50px 0;
+    background: linear-gradient(
+      to bottom,
+      var(--secondary) 32%,
+      var(--light) 32%
+    );
+  }
+
+  .FilterInfo h1 {
+    font-size: 50px;
+    line-height: 55px;
+    margin-bottom: 30px;
+  }
+
+  .CTA__info h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .Ebook {
+    background: linear-gradient(
+      to bottom,
+      var(--secondary) 35%,
+      var(--light) 35%
+    );
+  }
+}
