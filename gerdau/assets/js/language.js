@@ -23,9 +23,9 @@ $(document).ready(function () {
       "numbers-hours": "Horas doadas",
       "numbers-source": "Fonte: Plataforma V2V - data 09/11/21",
       "ebook-quote1":
-        '"Atuar com responsabilidade social a partir do entendimento do nosso papel na sociedade é uma premissa na qual a Gerdau investe." - Carol Carpenedo, Diretora Global de Pessoas e Responsabilidade Social.',
+        '"Atuar com responsabilidade social a partir do entendimento do nosso papel na sociedade é uma premissa na qual a Gerdau investe." - <i>Carol Carpenedo, Diretora Global de Pessoas e Responsabilidade Social.</i>',
       "ebook-quote2":
-        '"Vejo minhas ações de voluntariado como uma retribuição à sociedade, por tudo que muitos me ajudaram a conquistar." - Carlos Andre Rios Esteves, colaborador Next Business Development.',
+        '"Vejo minhas ações de voluntariado como uma retribuição à sociedade, por tudo que muitos me ajudaram a conquistar." - <i>Carlos Andre Rios Esteves, colaborador Next Business Development.</i>',
       "ebook-cta-text":
         "Confira a versão completa das <br /> nossas ações de impacto em 2021.",
       "ebook-cta-button": "Baixe Aqui",
@@ -33,9 +33,9 @@ $(document).ready(function () {
         "<strong> Baixe o ebook <br /> e confira </strong> <br /> nosso impacto.",
       "filter-title": "Vem moldar <br />o futuro com <br />a gente!",
       "filter-text":
-        "Ainda não faz parte do nosso Programa de Voluntariado? Uma nova página do futuro começa em 2022 e queremos você ao nosso lado. Uma pequena ação pode contribuir para um amanhã muito melhor. Vem!",
+        "Uma nova página do futuro começa em 2022 e queremos você ao nosso lado. Uma pequena ação pode contribuir para um amanhã muito melhor. Vem!",
       "filter-cta-text":
-        "Já faz a diferença com o Programa de Voluntariado? Atualize a sua foto de perfil com nosso filtro especial!",
+        "Já faz a diferença com o Programa de Voluntariado Gerdau? Atualize a sua foto de perfil com nosso filtro especial!",
       "filter-cta-button": "Comece Agora",
       "cta-title": "A transformação começa aqui",
       "cta-text":
@@ -59,9 +59,9 @@ $(document).ready(function () {
       // not spec
       "numbers-source": "Source: V2V Platform - 11/09/21",
       "ebook-quote1":
-        '"When we are aware of our social role, we seek to transform intentions into concrete actions and positively impact the lives of the people and society around us. The Gerdau Volunteer Program aims at practicing our citizenship, promoting closer ties with the communities in which we operate. " - Carol Carpenedo, Global Director of People and Social Responsibility.',
+        '"When we are aware of our social role, we seek to transform intentions into concrete actions and positively impact the lives of the people and society around us. The Gerdau Volunteer Program aims at practicing our citizenship, promoting closer ties with the communities in which we operate. " - <i>Carol Carpenedo, Global Director of People and Social Responsibility.</i>',
       "ebook-quote2":
-        '"I see my volunteer actions as a reciprocation to society, due to everything that many people have helped me to achieve. I thank Gerdau for giving the opportunity to be able to contribute to a better Brazil by volunteering.” - Carlos Andre Rios Esteves, Next Business Development employee.',
+        '"I see my volunteer actions as a reciprocation to society, due to everything that many people have helped me to achieve. I thank Gerdau for giving the opportunity to be able to contribute to a better Brazil by volunteering.” - <i>Carlos Andre Rios Esteves, Next Business Development employee.</i>',
       "ebook-cta-text":
         "Check out the full version of our <br /> impact actions in 2021.",
       "ebook-cta-button": "Download Here!",
@@ -70,9 +70,9 @@ $(document).ready(function () {
         "<strong> Download the <br /> ebook and <br /> check out </strong> <br /> our impact.",
       "filter-title": "Come shape <br /> the future <br />with us!",
       "filter-text":
-        "Haven’t you become part of our Volunteer Program yet? A new page of the future begins in 2022 and we would like to have you by our side. A small action can contribute to a much better tomorrow. Join us!",
+        "A new page of the future begins in 2022 and we would like to have you by our side. A small action can contribute to a much better tomorrow. Join us!",
       "filter-cta-text":
-        "Are you already making a difference through the Volunteer Program? Update your profile picture with our special filter!",
+        "Are you already making a difference through the Gerdau Volunteer Program? Update your profile picture with our special filter!",
       "filter-cta-button": "Start Now",
       "cta-title": "The transformation starts here",
       "cta-text":
@@ -96,9 +96,9 @@ $(document).ready(function () {
       "numbers-hours": "Horas donadas",
       "numbers-source": "Fuente: Plataforma V2V - data 09/11/21",
       "ebook-quote1":
-        '"Cuando somos conscientes de nuestro papel social, buscamos transformar las intenciones en acciones concretas e impactar positivamente en la vida de las personas y la sociedad que nos rodea. El Programa de Voluntariado de Gerdau tiene como objetivo practicar nuestra ciudadanía, promoviendo el acercamiento a las comunidades en las que actuamos. " - Carol Carpenedo, Directora Global de Personas y Responsabilidad Social.',
+        '"Cuando somos conscientes de nuestro papel social, buscamos transformar las intenciones en acciones concretas e impactar positivamente en la vida de las personas y la sociedad que nos rodea. El Programa de Voluntariado de Gerdau tiene como objetivo practicar nuestra ciudadanía, promoviendo el acercamiento a las comunidades en las que actuamos. " - <i>Carol Carpenedo, Directora Global de Personas y Responsabilidad Social.</i>',
       "ebook-quote2":
-        '"Veo mis acciones de voluntariado como una retribución a la sociedad, por todo lo que muchos me han ayudado a lograr. Agradezco a Gerdau por darme el espacio y la oportunidad de poder contribuir a un Brasil mejor siendo un voluntario". - Carlos Andre Rios Esteves, empleado de Next Business Development.',
+        '"Veo mis acciones de voluntariado como una retribución a la sociedad, por todo lo que muchos me han ayudado a lograr. Agradezco a Gerdau por darme el espacio y la oportunidad de poder contribuir a un Brasil mejor siendo un voluntario". - <i>Carlos Andre Rios Esteves, empleado de Next Business Development.</i>',
       "ebook-cta-text":
         "Consulte la versión completa de nuestras <br /> acciones de impacto en 2021.",
       "ebook-cta-button": "¡DESCÁRGALA AQUÍ!",
@@ -107,9 +107,9 @@ $(document).ready(function () {
       "filter-title":
         "Ven a <br /> moldear el <br /> futuro con <br /> nosotros!",
       "filter-text":
-        "¿Aún no forma parte de nuestro Programa de Voluntariado? Una nueva página del futuro comienza en 2022 y te queremos a nuestro lado. Una pequeña acción puede contribuir a un mañana mucho mejor. ¡Ven!",
+        "Una nueva página del futuro comienza en 2022 y te queremos a nuestro lado. Una pequeña acción puede contribuir a un mañana mucho mejor. ¡Ven!",
       "filter-cta-text":
-        "¿Ya estás marcando la diferencia con el Programa de Voluntariado? Actualiza tu foto de perfil con nuestro filtro especial.",
+        "¿Ya estás marcando la diferencia con el Programa de Voluntariado Gerdau? Actualiza tu foto de perfil con nuestro filtro especial.",
       "filter-cta-button": "COMIENZA AHORA",
       "cta-title": "La transformación empieza aquí",
       "cta-text":
