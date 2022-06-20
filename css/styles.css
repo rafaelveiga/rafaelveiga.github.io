@@ -75,10 +75,10 @@ a:hover {
   padding-bottom: 40px;
 }
 
-.SkillColumn:last-child {
+/* .SkillColumn:last-child {
   padding-left: 20px;
   border-left: 1px solid #f0f0f0;
-}
+} */
 
 .SkillColumn h3 {
   text-align: center;
@@ -128,7 +128,7 @@ a:hover {
 
 .TimelineItem {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   column-gap: 24px;
   margin-bottom: 32px;
 }
@@ -199,7 +199,7 @@ a:hover {
     text-align: center;
     display: flex;
     align-items: center;
-  }  
+  }
 }
 
 @media (max-width: 768px) {
@@ -210,7 +210,7 @@ a:hover {
   .SkillsBox {
     margin-top: -50px;
   }
-  
+
   .TimelineItem {
     grid-template-columns: 1fr;
     row-gap: 24px;
@@ -239,7 +239,7 @@ a:hover {
   .TimelineItem img {
     margin-top: 16px;
   }
-  
+
   .ItemTechList {
     flex-wrap: wrap;
   }
