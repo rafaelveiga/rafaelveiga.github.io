@@ -1,3 +1,76 @@
-.current {
-  color: green;
+:root {
+  --bg-dark: #252422;
+  --bg-light: #403d39;
+  --text-dark: #ccc5b9;
+  --text: #fffcf2;
+  --accent: #eb5e28;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  font-family: 'Quattrocento', serif;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: var(--text);
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+nav a.current {
+  color: var(--text-dark);
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+/* Home */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-header span {
+  color: var(--text)
+}
+
+.profile-header h3 {
+  font-size: 2rem;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: block;
+  border: 3px solid var(--accent);
 }
