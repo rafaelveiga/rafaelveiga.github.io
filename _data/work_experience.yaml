@@ -1,0 +1,92 @@
+- position: Senior Software Engineer
+  company: Podium
+  company_url: https://www.podium.com/
+  start: Oct/22
+  end: Present
+  skills:
+    - Elixir
+    - Phoenix
+    - React
+    - Javascript
+    - GraphQL
+    - Postgresql
+- position: Fullstack Developer
+  company: Gamers Club Media
+  company_url: https://gamersclub.com.br/
+  start: Jul/19
+  end: Oct/22
+  skills:
+    - REDIS
+    - AWS
+    - Express.js
+    - Node.js
+    - Typescript
+    - Javascript
+    - Next.js
+    - Redux
+    - Wordpress
+    - REST APIs
+    - MySQL
+    - Wordpress
+  description: "
+    Gamers Club Media is a network of multiple esports websites (DRAFT5.gg, VALORANTZone.gg, TropaFreeFire.com.br)<br />
+    <br />
+    This endeavor started on Jan/2017, where I created DRAFT5.gg as a side project. In the following years, DRAFT5.gg grew to be the largest CS:GO focused esports website in Latin America.<br />
+    <br />
+    In Jun/2019, DRAFT5 was acquired by Gamers Club and Immortals Gaming Club. This has allowed me to pursue the development of DRAFT5 full-time in a multiple hat role working as fullstack developer and product designer<br />
+    <br />
+    Together with Gamers Club, we’ve expanded our operation to two more websites and a team of more than 20 professionals working for our network.<br />
+    <br />
+    With an average of 500.000 unique users and 3.2 million pageviews per month across all websites, Gamers Club Media has become one of the largest esports content networks in Latin America.<br />
+    <br />
+    <strong>Responsibilities:</strong>
+    <ul>
+      <li>Led technical decisions for our technology stack, including infrastructure, backend and frontend.</li>
+      <li>Maximized SEO and Pagesped Insights metrics</li>
+      <li>Built and designed features from the ground up (Tournament brackets, team line-ups, real time play by play on CS:GO matches, from prototyping to final deploy</li>
+      <li>Worked with advertisers and advertising technologies to achieve break-even through ad revenue</li>
+      <li>Managed a team of developers in a Scrum based methodology</li>
+      <li>Launched TropaFreeFire and VALORANTZone as MVPs, and managed the growth of both websites to over 500k pageviews and 100k unique users per month in a year.</li>
+    </ul>
+    <br />
+
+    <strong>Key Achievements</strong>
+    <ul>
+      <li>From a side project / MVP to the largest CS:GO focused esports website in Latin America: Developing features, measuring results and understanding user needs</li>
+      <li>14M pageviews and 2.2M unique users in Q4/2021, all-time record for the network</li>
+    </ul>
+    <br />
+    <strong>Tecnologies used:</strong>
+    <ul>
+    <li>Next.js for DRAFT5 front-end and Wordpress for TropaFreeFire and VALORANTZone</li>
+    <li>A Node.js API, using Express.js, REDIS and MySQL, serving data to our front-end applications</li>
+    <li>A React + Redux admin panel, to manage matches, tournaments and teams</li>
+  "
+- position: Co-Founder
+  company: DRAFT5.gg
+  company_url: https://draft5.gg/
+  start: Jan/17
+  end: Oct/22
+- position: Co-Founder
+  company: Valorant Zone
+  company_url: https://valorantzone.gg/
+  start: Apr/20
+  end: Oct/22
+- position: Co-Founder
+  company: Tropa Free Fire
+  company_url: https://tropafreefire.com.br/
+  start: Apr/20
+  end: Oct/22
+- position: UX Designer & Front End Developer
+  company: WeFit - Digital Service Design
+  company_url: https://wefit.com.br/
+  start: Feb/16
+  end: Jun/19
+- position: UI Designer
+  company: Farofa Studios
+  start: Aug/13
+  end: Feb/16
+- position: Front End Developer
+  company: Produzweb
+  start: Apr/12
+  end: Aug/13

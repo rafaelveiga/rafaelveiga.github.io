@@ -11,3 +11,21 @@ title: Rafael Veiga - Senior Software Engineer
     <a href="https://podium.com" target="_blank">Podium</a>
   </h3>
 </div>
+
+{% for item in site.data.work_experience %}
+<div class="work-experience">
+  <div class="work-experience-dates">{{ item.start }} - {{ item.end}}</div>
+  <div class="work-experience-content">
+    <h4>{{ item.position }}</h4>
+    <h5>{{ item.company }}</h5>
+
+    <p>{{ item.description }}</p>
+
+    <div class="skills-container">
+      {% for skill in item.skills %}
+      <span class="skill">{{ skill }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endfor %}
