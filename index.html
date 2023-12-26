@@ -17,7 +17,9 @@ title: Rafael Veiga - Senior Software Engineer
   <div class="work-experience-dates">{{ item.start }} - {{ item.end}}</div>
   <div class="work-experience-content">
     <h4>{{ item.position }}</h4>
-    <h5>{{ item.company }}</h5>
+    <h5>
+      <a href="{{ item.company_url }}" target="_blank">{{ item.company }}</a>
+    </h5>
 
     <p>{{ item.description }}</p>
 

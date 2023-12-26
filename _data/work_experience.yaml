@@ -3,6 +3,7 @@
   company_url: https://www.podium.com/
   start: Oct/22
   end: Present
+  description: Working on the Automations and Bulk Messaging team, developing multiple applications in a microservices pattern using Elixir, Javascript and React
   skills:
     - Elixir
     - Phoenix
@@ -58,35 +59,80 @@
     <br />
     <strong>Tecnologies used:</strong>
     <ul>
-    <li>Next.js for DRAFT5 front-end and Wordpress for TropaFreeFire and VALORANTZone</li>
-    <li>A Node.js API, using Express.js, REDIS and MySQL, serving data to our front-end applications</li>
-    <li>A React + Redux admin panel, to manage matches, tournaments and teams</li>
+      <li>Next.js for DRAFT5 front-end and Wordpress for TropaFreeFire and VALORANTZone</li>
+      <li>A Node.js API, using Express.js, REDIS and MySQL, serving data to our front-end applications</li>
+      <li>A React + Redux admin panel, to manage matches, tournaments and teams</li>
+    </ul>
   "
 - position: Co-Founder
   company: DRAFT5.gg
   company_url: https://draft5.gg/
   start: Jan/17
   end: Oct/22
+  description: Part of the Gamers Club Media Group
 - position: Co-Founder
   company: Valorant Zone
   company_url: https://valorantzone.gg/
   start: Apr/20
   end: Oct/22
+  description: Part of the Gamers Club Media Group
 - position: Co-Founder
   company: Tropa Free Fire
   company_url: https://tropafreefire.com.br/
   start: Apr/20
   end: Oct/22
+  description: Part of the Gamers Club Media Group
 - position: UX Designer & Front End Developer
   company: WeFit - Digital Service Design
   company_url: https://wefit.com.br/
   start: Feb/16
   end: Jun/19
+  description: "
+    I've worked as a UX Designer and Front end Developer at Wefit for 3.5 years <br />
+    <br />
+    While I was there, I've worked with several clients, including:<br />
+    <br />
+    <strong>Azul Linhas Aéreas</strong>
+    <ul>
+      <li>Main website development using Handlebars, HTML, Sass and Gulp.</li>
+      <li>Internal systems for IT and Airports team, from user research to website and app development</li>
+      <li>App development for baggage and airline internal control, used throughout the whole airport operation, deployed in a specific mobile device</li>
+    </ul>
+
+    <strong>Luft Logistics</strong>
+    <ul>
+      <li>React/Redux web development for internal WMS/TMS system</li>
+    </ul>
+    <strong>Repom</strong>
+    <ul>
+      <li>Angular 2 development for main company website</li>
+      <li>Internal toll financial management system for logistics clients, including user research and web development (HTML, CSS)</li>
+    </ul>
+  "
+  skills:
+   - React
+   - React Native
+   - Redux
+   - Angular.js
+   - Angular 2
+   - Handlebars.js
+   - Sketch
+   - User Research
 - position: UI Designer
   company: Farofa Studios
   start: Aug/13
   end: Feb/16
+  description: I've worked as an UX/UI Designer designing games and interactive experiences for children
+  skills:
+    - Photoshop
+    - Illustrator
+    - Sketch
 - position: Front End Developer
   company: Produzweb
   start: Apr/12
   end: Aug/13
+  description: I've worked as a Front End Developer, creating websites for multiple clients with HTML, CSS and PHP
+  skills:
+    - HTML
+    - CSS
+    - PHP
