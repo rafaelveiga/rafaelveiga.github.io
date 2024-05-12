@@ -129,6 +129,58 @@ nav a.current {
   text-transform: uppercase;
 }
 
+/* projects */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.projects .project {
+  background: var(--bg-light);
+  padding: 20px;
+  border-radius: 10px;
+  color: var(--text-dark);
+  transition: all 0.3s;
+}
+
+.projects .project:hover {
+  background: var(--accent);
+  color: var(--text)
+}
+
+.projects .project h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.projects .project p {
+  margin: 0px 0;
+}
+
+.projects .project .stats {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.projects .project .stats .stat {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+}
+
+.projects .project .stats .stat .value {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text)
+}
+
+.projects .project .stats .stat .label {
+  font-size: 12px;
+}
+
 /* Footer */
 footer {
   margin-top: 64px;

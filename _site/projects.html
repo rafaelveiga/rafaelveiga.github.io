@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Blog</title>
+    <title>Projects</title>
     <link
       rel="stylesheet"
       href="/assets/css/main.css"
@@ -29,7 +29,7 @@
   
     <a href="/" >Home</a>
   
-    <a href="/projects.html" >Projects</a>
+    <a href="/projects.html" class="current">Projects</a>
   
     <a href="/about.html" >About</a>
   
@@ -37,11 +37,27 @@
   
 </nav>
 </header>
- <h1>Latest Posts</h1>
+ <div class="projects">
+  <a href="https://github.com/rafaelveiga/obsidian-widgets" target="_blank" class="project">
+    <h2>Obsidian Widgets</h2>
+    <p>
+      An Obsidian plugin that adds widgets to your notes. Includes Clock,
+      Countdown, Counter and Quote widgets
+    </p>
+    <div class="stats">
+      <div class="stat">
+        <span class="value" id="stargazers-obsidian-widgets">Loading...</span>
+        <span class="label">Stars on Github</span>
+      </div>
+      <div class="stat">
+        <span class="value" id="downloads-obsidian-widgets">Loading...</span>
+        <span class="label">Downloads in Obsidian</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-<ul>
-  
-</ul>
+<script src="assets/js/obsidian-widgets.js"></script>
  <footer>
   Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Hosted
   on GitHub Pages.
