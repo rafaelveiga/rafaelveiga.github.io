@@ -1,11 +1,14 @@
+@import "monokai.css";
+
 :root {
-  --bg-dark: #252422;
-  --bg-light: #403d39;
-  --text-dark: #ccc5b9;
-  --text: #fffcf2;
+  --bg-dark: #242423;
+  --bg-light: #333533;
+  --text-dark: #cfdbd5;
+  --text: #e8eddf;
   --accent: #059cdd;
   --font: 'Inter', sans-serif
 }
+
 
 body {
   background: var(--bg-dark);
@@ -35,6 +38,12 @@ header h1 {
   text-transform: uppercase;
 }
 
+hr {
+  border: 0;
+  border-top: 1px solid var(--bg-light);
+
+}
+
 
 nav {
   display: flex;
@@ -60,6 +69,9 @@ nav a.current {
   align-items: center;
   gap: 30px;
   margin-bottom: 30px;
+  background: var(--bg-light);
+  padding: 10px 20px;
+  border-radius: 20px;
 }
 
 .profile-header span {
@@ -179,6 +191,19 @@ nav a.current {
 
 .projects .project .stats .stat .label {
   font-size: 12px;
+}
+
+/* posts  */
+.post-metadata {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+  padding: 20px 0;
+  justify-content: center;
+  font-size: 12px;
+  border-bottom: 1px solid var(--bg-light);
+  border-top: 1px solid var(--bg-light);
 }
 
 /* Footer */

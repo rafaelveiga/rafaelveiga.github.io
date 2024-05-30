@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Automating YNAB with Node.js, Puppeteer and a little bit of Bull</title>
+    <link
+      rel="stylesheet"
+      href="/assets/css/main.css"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+  <a href="https://rafaelveiga.com">
+    <h1><strong>Rafael</strong>Veiga</h1>
+  </a>
+  <nav>
+  
+    <a href="/" >Home</a>
+  
+    <a href="/blog.html" >Blog</a>
+  
+    <a href="/projects.html" >Projects</a>
+  
+    <a href="/about.html" >About</a>
+  
+    <a href="/assets/files/CV.pdf" >CV</a>
+  
+</nav>
+</header>
+ <h1>Automating YNAB with Node.js, Puppeteer and a little bit of Bull</h1>
+<div class="post-metadata">
+  29 May 2024 -  #YNAB,  #automation 
+</div>
+
+<p><a href="https://ynab.com">YNAB</a> is a great financial tool that helps you budget your money. It’s a web-based application that allows you to import transactions from your bank accounts and credit cards, and then categorize them into different budget categories. It’s a great tool for keeping track of your spending and making sure you’re staying within your budget.</p>
+
+<p>One of the cool features of YNAB is that you can connect to your bank to automatically import transactions, saving you the manual labor of entering every single transaction by hand on the UI. Although it offers direct connection to a bunch of financial institutions, <em>my bank is not one of them</em>.</p>
+
+<p>Based in Brazil, I don’t see a future where <a href="https://plaid.com">Plaid</a>, the engine behind YNAB’s bank connections, will support my bank. So I decided to automate the process of importing transactions into YNAB using Node.js and a little bit of Puppeteer. In this post I’ll try to highlight the wrinks I’ve encountered during this process and how I’ve solved them.</p>
+
+<hr />
+
+<h2 id="the-plan">The plan</h2>
+
+<p>My bank also doesn’t offer a way to export transactions through an API, so I had to resort to scraping the transactions from the web interface. The plan was to:</p>
+
+<ul>
+  <li>Log in to my bank’s website</li>
+  <li>Navigate to the transactions page</li>
+  <li>Download an .TXT file with the transactions</li>
+  <li>Parse the .TXT file and gather the transactions that happened since the bot last ran</li>
+  <li>Call YNAB API to import the transactions into the correct account</li>
+  <li>Notify me through email that X transactions were imported</li>
+</ul>
+
+<hr />
+
+<h2 id="two-accounts-two-separate-tasks">Two accounts, two separate tasks</h2>
+
+<p>In my current YNAB setup, I have a “Credit Card” account that I use for all my credit card transactions. I also have a “Checking Account” that I use for all my debit card transactions. This meant specifying two tasks, one to gather transactions from my credit card and another to gather transactions from my checking account.</p>
+
+<h3 id="checking-account---downloading-the-file-using-puppeteer">Checking Account - Downloading the file using Puppeteer</h3>
+
+<p>So I’ve started by creating a function that would encompass the logic detailed above for my checking account.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">fetchCheckingAccountTransactions</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">ofxPath</span> <span class="o">=</span> <span class="nf">downloadTxtFile</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">transactions</span> <span class="o">=</span> <span class="nf">parseOfxFile</span><span class="p">(</span><span class="nx">ofxPath</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">newTransactions</span> <span class="o">=</span> <span class="nf">filterNewTransactions</span><span class="p">(</span><span class="nx">transactions</span><span class="p">);</span>
+  <span class="nf">addTransactionsToYNAB</span><span class="p">(</span><span class="nx">newTransactions</span><span class="p">);</span>
+  <span class="nf">sendEmail</span><span class="p">(</span><span class="nx">newTransactions</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">downloadTxtFile</code> heavily relies on Puppeteer to navigate the bank’s website, log in, and download the .TXT file. Unfortunately, this script is brittle and can break at any minute if the bank decides to change any classes or IDs on their website. But it’s a risk I’m willing to take and its a risk for any web scraping project.</p>
+
+<p>Since we are downloading a file, to customize Puppeteer’s behavior on downloads, we need to call a custom method on the <code class="language-plaintext highlighter-rouge">page</code> object.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">downloadPath</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">/downloads</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">_client</span><span class="p">.</span><span class="nf">send</span><span class="p">(</span><span class="dl">"</span><span class="s2">Page.setDownloadBehavior</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">behavior</span><span class="p">:</span> <span class="dl">"</span><span class="s2">allow</span><span class="dl">"</span><span class="p">,</span>
+  <span class="nx">downloadPath</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>This allows us to specify a download path for the file we are about to download. This is important because we need to know where the file is saved to parse it later. The textfile is formatted in a simple manner:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2024-05-29;StoreName;-123.45;
+2024-05-29;StoreName;-123.45;
+2024-05-29;Deposit;123.45;
+</code></pre></div></div>
+
+<p>Parsing it was trivial. After that, it was just a matter of filtering the transactions that happened since the last time the bot ran and calling <a href="https://api.ynab.com/">YNAB’s API</a> to import the transactions. Success!</p>
+
+<h3 id="credit-card-account---intercepting-the-network-requests-using-puppeteer">Credit Card Account - Intercepting the network requests using Puppeteer</h3>
+
+<p>The credit card account was a bit trickier. The bank’s website does not offer a .TXT export of the transactions. The data is also a little bit more complex, with transactions split between multiple credit cards.</p>
+
+<p>To structure the task, I’ve done the same as the checking account. But instead of using Puppeteer to download a file, we use it to intercept the requests and get the raw JSON data that the website uses to render the transactions.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">statement</span><span class="p">;</span>
+
+<span class="nx">page</span><span class="p">.</span><span class="nf">on</span><span class="p">(</span><span class="dl">"</span><span class="s2">response</span><span class="dl">"</span><span class="p">,</span> <span class="k">async </span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if </span><span class="p">(</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nf">url</span><span class="p">().</span><span class="nf">startsWith</span><span class="p">(</span><span class="dl">"</span><span class="s2">https://my-bank</span><span class="dl">"</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nf">url</span><span class="p">().</span><span class="nf">includes</span><span class="p">(</span><span class="dl">"</span><span class="s2">.com.br/internal-api</span><span class="dl">"</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nf">request</span><span class="p">().</span><span class="nf">method</span><span class="p">()</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span> <span class="o">&amp;&amp;</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nf">request</span><span class="p">().</span><span class="nf">postData</span><span class="p">()</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">section=MyCardTransactions</span><span class="dl">"</span>
+  <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">statement</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nf">json</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>In the code block above we heavily filter the network requests to only get the one that returns the JSON data we need. This also a bit brittle since the Internal API URL can change at any time. But at last, we have the data we need to parse and import into YNAB.</p>
+
+<p>In the parsing stage there is some JSON wrangling, but I won’t bore you with the specifics, since this is exclusive to my bank. The rest of the process is the same as the checking account: Parse, Filter, Import, Notify.</p>
+
+<hr />
+
+<h2 id="security">Security</h2>
+
+<p>I’ve stored all my sensitive information necessary for logging in my bank account in a <code class="language-plaintext highlighter-rouge">.env</code> file and used <code class="language-plaintext highlighter-rouge">dotenv</code> to load it into the environment. This way I can keep my secrets out of the codebase and not worry about accidentally committing them to my private repository. The bot runs locally on my machine, so it is pretty contained.</p>
+
+<hr />
+
+<h2 id="scheduling-the-tasks">Scheduling the tasks</h2>
+
+<p>Since some tasks are brittle and can break sometimes, I’ve decided to use <a href="https://optimalbits.github.io/bull/">Bull</a> to schedule the tasks. Bull is a Node.js library that allows you to create and manage job queues. It’s a great tool for running tasks in the background and handling retries and failures. All you need is a Redis server running and you’re good to go.</p>
+
+<p>To start, I’ve created a Bull queue for each task:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">checkingAccountQueue</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Bull</span><span class="p">(</span><span class="dl">"</span><span class="s2">checkingAccountQueue</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">creditCardQueue</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Bull</span><span class="p">(</span><span class="dl">"</span><span class="s2">creditCardQueue</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Then I’ve added the tasks to the queues on a cron schedule:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">checkingAccountQueue</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">PARAMS</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">repeat</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">cron</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0 7 * * *</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">attempts</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="nx">creditCardQueue</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">PARAMS</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">repeat</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">cron</span><span class="p">:</span> <span class="dl">"</span><span class="s2">0 7 * * *</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="na">attempts</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Finally, I’ve created a worker for each queue that runs the task:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">checkingAccountQueue</span><span class="p">.</span><span class="nf">process</span><span class="p">(</span><span class="nx">fetchCheckingAccountTransactions</span><span class="p">);</span>
+<span class="nx">creditCardQueue</span><span class="p">.</span><span class="nf">process</span><span class="p">(</span><span class="nx">fetchCreditCardTransactions</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Both tasks, the checking account and the credit card account, are scheduled to run every day at 7 AM and have up to 5 retries. There were some days where the bot failed to run because of network issues or the bank’s website being down, but Bull handled the retries gracefully and the task eventually ran successfully. This made the automation more robust and reliable.</p>
+
+<hr />
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Automating the process of importing transactions into YNAB has saved me a lot of time and effort. I no longer have to manually enter every single transaction into the UI, which was a tedious and error-prone process. I can finally experience a linked account experience on YNAB and have a better understanding of my finances.</p>
+
+ <footer>
+  Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Hosted
+  on GitHub Pages.
+</footer>
+
+    </div>
+  </body>
+</html>
