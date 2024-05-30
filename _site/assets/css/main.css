@@ -1,3 +1,5 @@
+@import "monokai.css";
+
 :root {
   --bg-dark: #242423;
   --bg-light: #333533;
@@ -6,6 +8,7 @@
   --accent: #059cdd;
   --font: 'Inter', sans-serif
 }
+
 
 body {
   background: var(--bg-dark);
@@ -33,6 +36,12 @@ header h1 {
   color: var(--text);
   font-weight: 100;
   text-transform: uppercase;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--bg-light);
+
 }
 
 
